@@ -4,7 +4,12 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
 	plugins: [sveltekit(), ViteCSSExportPlugin()],
+	
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
+	},
+	
+	build: {
+		target: 'esnext' //browsers can handle the latest ES features
 	}
 });
