@@ -1,0 +1,75 @@
+/* :root {
+    --clr-primary: pink;
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+        --clr-primary: black; 
+    }
+}
+
+$primary: var(--clr-primary);
+
+*/
+:root {
+    --primary: #FFE2B6;
+    --secondary: #FFD39C;
+    --highlight: #E9773C;
+
+    --auxiliar: #e6b77e;
+
+    --iconbg: #F8A162;
+
+    --gradientBegin: #EA7243;
+    --gradientEnd: #E0881D;
+}
+
+:has(#darkModeSwitch:not(:checked)) {
+    --primary: #1c1e27;
+    --secondary: #0f1016;
+    --highlight: #d14f0e;
+
+    --auxiliar: #e6b77e;
+
+    --iconbg: #1f2231;
+
+    --gradientBegin: #aa4219;
+    --gradientEnd: #c76e00;
+}
+
+
+$primary: var(--primary);
+$secondary: var(--secondary);
+$highlight: var(--highlight);
+
+$auxiliar: var(--auxiliar);
+
+$iconbg: var(--iconbg);
+
+$gradientBegin: var(--gradientBegin);
+$gradientEnd: var(--gradientEnd);
+
+:export {
+    primary: $primary;
+    secondary: $secondary;
+    highlight: $highlight;
+
+    auxiliar: $auxiliar;
+
+    iconbg: $iconbg;
+
+    gradientBegin: $gradientBegin;
+    gradientEnd: $gradientEnd;
+}
+
+/* 
+darkmode?
+
+$primary: #241e16;
+$secondary: rgb(113, 63, 2);
+$highlight: #ddb9a7;
+
+$auxiliar: #e6b77e;
+
+$iconbg: #F8A162;
+*/

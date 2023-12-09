@@ -1,59 +1,103 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+    import Intro from '$components/Intro.svelte';
+    import Education from '$components/Education.svelte';
+    import Tools from '$components/Tools.svelte';
+    import Projects from '$components/Projects.svelte';
+    import SecondFlyout from '$components/flyout/SecondFlyout.svelte';
+    import Year from '$components/Year.svelte';
+    import Works from '$components/Works.svelte';
+    import DarkModeSwitch from '$components/DarkModeSwitch.svelte';
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
 
-		to your new<br />SvelteKit app
-	</h1>
+<div class="outer">
+    <div class="inner">
+        <div class="darkmode">
+            <DarkModeSwitch />
+        </div>
+        <div class="intro">
+            <Intro />
+        </div>
+        <div class="tools">
+            <Tools />
+        </div>
+        <div class="education">
+            <Education />
+        </div>
+        <div class="splitter">
+            <div class="name">
+                <span> Luís Henrique de Almeida </span>
+            </div>
+            <div class="secondFlyout">
+                <SecondFlyout />
+            </div>
+            <Year><span class="hidden">CURRÍCULO</span> 2024</Year>
+        </div>
+        <div class="projects">
+            <Projects />
+        </div>
+        <div class="works">
+            <Works />
+        </div>
+    </div>
+</div>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
+<style lang="scss">
+    @use "$style/_fonts.scss";
+    @use "$style/_defaults" as defaults;
+    @use "$style/_palette.scss" as palette;
 
-	<Counter />
-</section>
+    @media only screen and (min-width: defaults.$mediaMinWidth) {
+        .outer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
+    .inner > * {
+        margin-block: 40px;
+    }
 
-	h1 {
-		width: 100%;
-	}
+    .darkmode {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
+    .splitter {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+        .hidden {
+            display: none;
+
+            @media (max-width: defaults.$mediaMaxWidth) {
+                display: block;
+            }
+        }
+
+        .name {
+            font-family: sansation;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: palette.$highlight;
+            text-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+            font-size: 40px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        @media (max-width: defaults.$mediaMaxWidth) {
+            flex-direction: column;
+        }
+    }
 </style>
