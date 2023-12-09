@@ -1,5 +1,5 @@
 <script>
-    /* import { onMount } from "svelte"; */
+    import { onMount } from "svelte";
 
     export let speed = "50s";
     export let direction = "forwards";
@@ -7,7 +7,7 @@
     let scroller;
     let scrollerInner;
 
-    /* onMount(() => {
+    onMount(() => {
         const addAnimation = () => {
             for(let _ in [1,2]){
                 [...scrollerInner.children].forEach(elem => {
@@ -24,7 +24,7 @@
         if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
             addAnimation();
         }
-    }); */
+    });
 </script>
 
 <div class="wrapper" style="--speed: {speed}; --direction: {direction}">
