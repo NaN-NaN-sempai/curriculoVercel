@@ -1,5 +1,5 @@
 <script>
-    import { onMount } from "svelte";
+    /* import { onMount } from "svelte"; */
 
     let checked = false;
 
@@ -15,11 +15,11 @@
         localStorage.setItem("darkmode", checked);
     }
 
-    onMount(() => {
+    /* onMount(() => {
         setupLocalValue();
 
         checked = !JSON.parse(localStorage.getItem("darkmode"));
-    });
+    }); */
 </script>
 
 <div class="switch">
