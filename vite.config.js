@@ -7,9 +7,9 @@ export default defineConfig({
 	
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
-	}/* ,
+	},
 	
 	build: {
 		target: 'esnext' //browsers can handle the latest ES features
-	} */
+	}
 });
