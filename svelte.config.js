@@ -6,7 +6,7 @@ const config = {
 	preprocess: [vitePreprocess()],
 	kit: {
 		adapter: adapter({
-			"maxDuration": 60
+			"maxDuration": 10
 		}),
 
 		alias: {
